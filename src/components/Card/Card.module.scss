@@ -1,0 +1,95 @@
+.card {
+  position: static;
+  height: 100px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid #bfbfbf;
+}
+
+.square {
+  height: 58px;
+  width: 58px;
+
+  background-color: green;
+}
+
+.circle {
+  border-radius: 50%;
+  height: 63px;
+  width: 63px;
+
+  background-color: green;
+}
+
+.triangle {
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  //border-width: 0 30px 52px 30px; FOR 60
+  border-width: 0 31.5px 54.6px 31.5px;
+  border-color: green green transparent green;
+  transform: rotate(0deg);
+}
+
+.triangle_mask_white {
+  position: absolute;
+  z-index: 10;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  //border-width: 0 30px 52px 30px; FOR 60
+  border-width: 0 31.5px 54.6px 31.5px;
+  border-color: white white transparent white;
+  transform: rotate(0deg);
+}
+
+.triangle_mask_black {
+  position: absolute;
+  z-index: 10;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  //border-width: 0 30px 52px 30px; FOR 60
+  border-width: 0 31.5px 54.6px 31.5px;
+  border-color: black black transparent black;
+  transform: rotate(0deg);
+}
+
+.triangle_mask_grey {
+  position: absolute;
+  z-index: 10;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  //border-width: 0 30px 52px 30px; FOR 60
+  border-width: 0 31.5px 54.6px 31.5px;
+  border-color: #a6a6a6 #a6a6a6 transparent #a6a6a6;
+  transform: rotate(0deg);
+}
+
+.red {
+  background-color: #ff0000;
+}
+
+.blue {
+  background-color: #2f5597;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.white_background {
+  background-color: white;
+}
+
+.black_background {
+  background-color: black;
+}
+
+.grey_background {
+  background-color: #a6a6a6;
+}
