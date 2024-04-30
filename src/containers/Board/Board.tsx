@@ -1,4 +1,4 @@
-import Card, { CardImage, CardOnBoard } from "../../components/Card/Card";
+import Card, { CardOnBoard } from "../../components/Card/Card";
 import { Deck } from "../../components/Card/Deck";
 import { generateAnswerKey } from "./AnswerKey";
 import styles from "./Board.module.scss";
@@ -30,9 +30,6 @@ const Board = () => {
           />
         );
       })}
-      {/* {myFirstNine.map((card, index) => {
-        return ()
-      })} */}
     </div>
   );
 };
