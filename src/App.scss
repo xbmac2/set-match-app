@@ -3,6 +3,17 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+
+  //my own code
+  box-sizing: border-box;
+  background: rgb(64, 64, 64);
+  background: linear-gradient(
+    157deg,
+    rgba(64, 64, 64, 1) 0%,
+    rgba(69, 69, 69, 1) 29%,
+    rgba(121, 121, 121, 1) 91%,
+    rgba(123, 123, 123, 1) 100%
+  );
 }
 
 .logo {
