@@ -95,49 +95,13 @@ const Card = ({ shape, shapeColour, backgroundColour }: CardProps) => {
   }
 
   return (
-    <div className={styles.card_component}>
-      <div className={styles.number_tag_wrapper}>
-        <div className={styles.number_tag}></div>
-      </div>
-      <article className={`${styles.card} ${requiredBackgroundColourStyle}`}>
-        <div
-          className={`${requiredShapeStyle} ${requiredShapeColourStyle}`}
-        ></div>
-        {shape === "triangle" && <div className={requiredMaskStyle}></div>}
-      </article>
-
-      {/* <article className={styles.card}>
-        <div className={styles.circle}>shape</div>
-      </article>
-
-      <article className={styles.card}>
-        <div className={styles.triangle}>shape</div>
-      </article>
-
-      <article className={styles.card}>
-        <div className={styles.square}>shape</div>
-      </article>
-
-      <article className={styles.card}>
-        <div className={styles.circle}>shape</div>
-      </article>
-
-      <article className={styles.card}>
-        <div className={styles.triangle}>shape</div>
-      </article>
-
-      <article className={styles.card}>
-        <div className={styles.square}>shape</div>
-      </article>
-
-      <article className={styles.card}>
-        <div className={styles.circle}>shape</div>
-      </article>
-
-      <article className={styles.card}>
-        <div className={styles.triangle}>shape</div>
-      </article> */}
-    </div>
+    <article className={`${styles.card} ${requiredBackgroundColourStyle}`}>
+      <div className={styles.number_tag}></div>
+      <div
+        className={`${requiredShapeStyle} ${requiredShapeColourStyle}`}
+      ></div>
+      {shape === "triangle" && <div className={requiredMaskStyle}></div>}
+    </article>
   );
 };
 

@@ -102,19 +102,6 @@
   background-color: #a6a6a6;
 }
 
-// .number_tag_wrapper {
-//   z-index: 30;
-//   display: flex;
-//   justify-content: flex-start;
-
-//   position: absolute;
-//   left: 0;
-
-//   border: 1px solid purple;
-//   height: 25px;
-//   width: 25px;
-// }
-
 .number_tag {
   position: absolute;
   z-index: 20;
@@ -127,10 +114,6 @@
 
   border: 1px solid #d7d3d5;
   background-color: darkred;
-  //transform: translate(-15px, -3px);
-  transform: translate(-5px, -5px);
+  //transform: translate(-5px, -5px);
+  transform: translate(-49px, -49px);
 }
-
-// .card-component {
-//   position: relative;
-// }
