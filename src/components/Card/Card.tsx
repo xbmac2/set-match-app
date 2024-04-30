@@ -1,5 +1,4 @@
 import styles from "./Card.module.scss";
-import { Deck } from "./Deck";
 
 export const cardShapes = ["square", "circle", "triangle"];
 export const cardShapeColours = ["red", "blue", "yellow"];
@@ -37,19 +36,47 @@ export class CardImage {
   }
 }
 
+//Card in Play will have a number id; inherits card class
+export class CardOnBoard extends CardImage {
+  private numberId: number;
+
+  // public constructor(
+  //   shape: string,
+  //   shapeColour: string,
+  //   backgourndColour: string,
+  //   numberId: number
+  // ) {
+  //   super(shape, shapeColour, backgourndColour);
+  //   this.numberId = numberId;
+  // }
+
+  public constructor(cardImage: CardImage, numberId: number) {
+    super(
+      cardImage.getShape(),
+      cardImage.getShapeColour(),
+      cardImage.getBackgroundColour()
+    );
+    this.numberId = numberId;
+  }
+
+  public getNumberId(): number {
+    return this.numberId;
+  }
+}
+
 export interface CardProps {
   shape: string;
   shapeColour: string;
   backgroundColour: string;
+  numberId: number;
 }
 
-const Card = ({ shape, shapeColour, backgroundColour }: CardProps) => {
-  // const deck = new Deck(); //caused to hang due to loop?
-  // // //Deck.buildCardImageArr();
-  // // deck.printDeck();
-  // const myFirstNine = deck.shuffleAndGetNine();
-  // myFirstNine.forEach((card) => console.log(card.getCardDescription()));
-
+const Card = ({
+  shape,
+  shapeColour,
+  backgroundColour,
+  numberId,
+}: CardProps) => {
   let requiredShapeStyle = undefined; //null?
   let requiredShapeColourStyle = undefined; //null?
   let requiredBackgroundColourStyle = undefined; //null?
@@ -95,46 +122,13 @@ const Card = ({ shape, shapeColour, backgroundColour }: CardProps) => {
   }
 
   return (
-    <>
-      <article className={`${styles.card} ${requiredBackgroundColourStyle}`}>
-        <div
-          className={`${requiredShapeStyle} ${requiredShapeColourStyle}`}
-        ></div>
-        {shape === "triangle" && <div className={requiredMaskStyle}></div>}
-      </article>
-
-      {/* <article className={styles.card}>
-        <div className={styles.circle}>shape</div>
-      </article>
-
-      <article className={styles.card}>
-        <div className={styles.triangle}>shape</div>
-      </article>
-
-      <article className={styles.card}>
-        <div className={styles.square}>shape</div>
-      </article>
-
-      <article className={styles.card}>
-        <div className={styles.circle}>shape</div>
-      </article>
-
-      <article className={styles.card}>
-        <div className={styles.triangle}>shape</div>
-      </article>
-
-      <article className={styles.card}>
-        <div className={styles.square}>shape</div>
-      </article>
-
-      <article className={styles.card}>
-        <div className={styles.circle}>shape</div>
-      </article>
-
-      <article className={styles.card}>
-        <div className={styles.triangle}>shape</div>
-      </article> */}
-    </>
+    <article className={`${styles.card} ${requiredBackgroundColourStyle}`}>
+      <div className={styles.number_tag}>{numberId + ""}</div>
+      <div
+        className={`${requiredShapeStyle} ${requiredShapeColourStyle}`}
+      ></div>
+      {shape === "triangle" && <div className={requiredMaskStyle}></div>}
+    </article>
   );
 };
 
