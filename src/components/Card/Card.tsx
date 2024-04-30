@@ -95,7 +95,10 @@ const Card = ({ shape, shapeColour, backgroundColour }: CardProps) => {
   }
 
   return (
-    <>
+    <div className={styles.card_component}>
+      <div className={styles.number_tag_wrapper}>
+        <div className={styles.number_tag}></div>
+      </div>
       <article className={`${styles.card} ${requiredBackgroundColourStyle}`}>
         <div
           className={`${requiredShapeStyle} ${requiredShapeColourStyle}`}
@@ -134,7 +137,7 @@ const Card = ({ shape, shapeColour, backgroundColour }: CardProps) => {
       <article className={styles.card}>
         <div className={styles.triangle}>shape</div>
       </article> */}
-    </>
+    </div>
   );
 };
 
