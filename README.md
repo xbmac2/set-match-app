@@ -4,6 +4,13 @@ Find the sets, claim the match
 
 ## Change Logs
 
+### 30/04/2024 - Generate answer key
+
+- Created new CardOnBoard class to inherit Card class and include number id (may revise this)
+- Added functions to generate answer key
+- Utilises functions that check complete uniqueness and complete similarity on the three Card properties to determine a valid Set
+- Used transform translate CSS to place number ids (instead of position absolute)
+
 ### 29/04/2024 - Generate one random board
 
 - Used classes to create Cards for the Deck
