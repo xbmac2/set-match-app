@@ -87,7 +87,7 @@
 }
 
 .yellow {
-  background-color: yellow;
+  background-color: rgb(241, 241, 0);
 }
 
 .white_background {
@@ -113,7 +113,15 @@
   width: 27px;
 
   border: 1px solid #d7d3d5;
-  background-color: darkred;
+  background-color: darkred; //change to gradient in ppt
   //transform: translate(-5px, -5px);
   transform: translate(-49px, -49px);
+
+  color: white;
+  font-family: calibri;
+  font-weight: 700;
+  font-size: x-large;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
