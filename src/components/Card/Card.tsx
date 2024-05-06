@@ -12,11 +12,11 @@ export class CardImage {
   public constructor(
     shape: string,
     shapeColour: string,
-    backgourndColour: string
+    backgroundColour: string
   ) {
     this.shape = shape;
     this.shapeColour = shapeColour;
-    this.backgroundColour = backgourndColour;
+    this.backgroundColour = backgroundColour;
   }
 
   public getShape(): string {
@@ -39,16 +39,6 @@ export class CardImage {
 //Card in Play will have a number id; inherits card class
 export class CardOnBoard extends CardImage {
   private numberId: number;
-
-  // public constructor(
-  //   shape: string,
-  //   shapeColour: string,
-  //   backgourndColour: string,
-  //   numberId: number
-  // ) {
-  //   super(shape, shapeColour, backgourndColour);
-  //   this.numberId = numberId;
-  // }
 
   public constructor(cardImage: CardImage, numberId: number) {
     super(
