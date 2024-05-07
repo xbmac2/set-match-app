@@ -4,6 +4,14 @@ Find the sets, claim the match
 
 ## Change Logs
 
+### 07/05/2024 - Inputting player answer
+
+- Clicking cards adds green border to indicate select
+- Clicking cards builds array that represents player's answer which is looked for in the answer key
+- Problems with re-render of cards after player guess is checked
+- **Cards should de-select (no green border) after player answer is checked**
+- Re-consider where player guess is constructed?
+
 ### 30/04/2024 - Generate answer key
 
 - Created new CardOnBoard class to inherit Card class and include number id (may revise this)
