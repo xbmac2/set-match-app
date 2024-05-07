@@ -135,3 +135,11 @@
   justify-content: center;
   align-items: center;
 }
+
+.not_selected {
+  border: 3px solid transparent;
+}
+
+.is_selected {
+  border: 3px solid #00ff00; //yellow;
+}

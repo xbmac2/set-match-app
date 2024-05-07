@@ -1,4 +1,6 @@
+import { useState } from "react";
 import styles from "./Card.module.scss";
+import { PlayerGuess, playerGuess } from "../../pages/RoundPage/RoundPage";
 
 export const cardShapes = ["square", "circle", "triangle"];
 export const cardShapeColours = ["red", "blue", "yellow"];
@@ -59,14 +61,24 @@ export interface CardProps {
   shapeColour: string;
   backgroundColour: string;
   numberId: number;
+  cardOnBoardObj: CardOnBoard;
+  //playerGuess: PlayerGuess;
+  guess: number[];
+  setGuess: (value: any) => unknown;
 }
 
 const Card = ({
+  guess,
+  setGuess,
+  cardOnBoardObj,
   shape,
   shapeColour,
   backgroundColour,
   numberId,
 }: CardProps) => {
+  //sleceted state for giving answer
+  const [isSelected, setIsSelected] = useState(false);
+  //rendering divs
   let requiredShapeStyle = undefined; //null?
   let requiredShapeColourStyle = undefined; //null?
   let requiredBackgroundColourStyle = undefined; //null?
@@ -111,8 +123,28 @@ const Card = ({
       break;
   }
 
+  //for selecting card
+  const handleClick = () => {
+    //render to visually indicate selection
+    setIsSelected(!isSelected);
+    //give number id to board state
+    console.log(cardOnBoardObj.getNumberId());
+    //setting guess
+    if (guess.length < 3) {
+      setGuess(guess.concat([cardOnBoardObj.getNumberId()]));
+    }
+
+    //RWEIRTE THIS TO A FULL IF ELSE THAT ADDS OR REMOVES FROM SET GUESS
+  };
+
   return (
-    <article className={`${styles.card} ${requiredBackgroundColourStyle}`}>
+    <article
+      className={
+        `${styles.card} ${requiredBackgroundColourStyle}` +
+        (isSelected ? ` ${styles.is_selected}` : ` ${styles.not_selected}`)
+      }
+      onClick={handleClick}
+    >
       <div className={styles.number_tag}>{numberId + ""}</div>
       <div
         className={`${requiredShapeStyle} ${requiredShapeColourStyle}`}
